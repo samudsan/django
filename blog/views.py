@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Post
+# from django.http import HttpResponse #to send http code directly
+
 
 post = [
     {'author': 'sandeep',
@@ -17,7 +19,7 @@ post = [
 
 def home(request):
     context = { # it will be used in render below
-        'posts':post
+        'posts':Post.objects.all()
     }
     return render(request, 'blog/home.html', context)
 

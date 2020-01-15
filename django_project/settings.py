@@ -123,6 +123,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# media root is the directory where the uploaded files will be saved.
+# by default pics will be saved in our project.
+# due to performance reasons we save that in file system instead of our project
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'blog-home'
